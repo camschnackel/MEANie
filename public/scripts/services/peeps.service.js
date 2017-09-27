@@ -1,5 +1,6 @@
 myApp.service('PeepsService', function ($http) {
     var sv = this;
+    sv.friends = {stuff: []};
     sv.peeps = {
         add: function (newPeep) {
             console.log('in addRecord:', newPeep);
@@ -15,7 +16,8 @@ myApp.service('PeepsService', function ($http) {
                 method: 'GET',
                 url: '/peeps',
             }).then(function (response) {
-                console.log('in service, back from server with:', response);
+                console.log('in service, back from server with:', response.data);
+                sv.friends.stuff = response.data;
             });
         }
     }

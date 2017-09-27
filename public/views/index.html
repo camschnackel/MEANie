@@ -20,6 +20,9 @@
         <input type="text" value="" ng-model="wmp.locationIn" placeholder="Location">
         <button ng-click='wmp.newPeep()'>Add</button>
         <button ng-click='wmp.whereMyPeepsAt()'>Read</button>
+        <ol>
+          <li ng-repeat="peep in wmp.thePeeps.stuff" style="color:#FDD4D4">Name: {{peep.name}} Location: {{peep.location}}</li>
+        </ol>
       </div>
     </div>
   </body>
